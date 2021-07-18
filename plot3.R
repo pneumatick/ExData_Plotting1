@@ -13,7 +13,7 @@ powerData$Sub_metering_2 <- as.numeric(powerData$Sub_metering_2)
 # Create the plot
 date <- paste(powerData$Date, powerData$Time)
 time <- as.numeric(as.POSIXct(strptime(date, "%d/%m/%Y %H:%M:%S")))
-with(powerData, plot(time, Sub_metering_1, type = "l", xaxt = "n"))
+with(powerData, plot(time, Sub_metering_1, type = "l", xaxt = "n", xlab = "", ylab = "Energy sub metering"))
 with(powerData, points(time, Sub_metering_2, type = "l", col = "red"))
 with(powerData, points(time, Sub_metering_3, type = "l", col = "blue"))
 axis(1, at = c(1170306000, 1170392370, 1170478740), labels = c("Thu", "Fri", "Sat"))
